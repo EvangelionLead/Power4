@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="monfile.js"></script>
+    <script type="text/javascript" src="nav.js"></script>
+    <script type="text/javascript" src="img.js"></script>
+   <link rel="stylesheet" type="text/css" href="base.css"/>
+</head>
+<body>
+
+    <div class='navbar'>
+        <h1 style="margin-left:27%;Games"></h1>
+<div class="m-dropdown">
+    <div class="e-button open">
+      Play The Games
+      <div class="e-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <ul class="e-list">
+      <li><a href="#tour" id ="tour">Tour</a></li>
+      <li><a href="#score" id="score">Score</a></li>
+      <li><a href="#p1" id="p1">P1</a></li>
+      <div class="custom-file">
+        <input type="file" id="profile_photo">
+        <img src="filename.jpg/jpeg/png/gif" alt="j1" width="30" height="30"></img>
+        <div id="profile-container">
+          <image id="profileImage" src="yuso.jpg" />
+       </div>
+       <input id="imageUpload" type="file" 
+              name="profile_photo" placeholder="Photo" required="" capture>
+    </div>
+      <li><a href="#p2" id="p2">P2</a></li>
+      <form runat="server">
+        <div class="custom-file">
+          <input type="file" id="profile_photo">
+         <img src="filename.jpg/jpeg/png/gif" alt="j2" width="30" height="30"></img>
+         <div id="profile-container">
+           <image id="profileImage" src="yusa.jpg" />
+        </div>
+        <input id="imageUpload" type="file" 
+               name="profile_photo" placeholder="Photo"  id="imageUpload" required="" capture> 
+     </div>
+
+     
+    </ul>
+  </div>
+  <div id="grid">
+    <script>
+        $(document).ready( function() {
+            $("#grid").grid(
+              5, 5, // Grid 
+              "#ff006e",  // Color Player 1
+              "#9ef01a", // Color Player 2
+              "Player 1", // Name Player 1
+              "Player 2", // Name Player 2
+              "1" // Tour
+            );
+    
+        } );
+    </script>
+    <script>
+        $(".e-list").slideUp(function() {
+    $(".e-button").removeClass("open");
+  });
+  
+  $(".e-button").on("click", function() {
+    if ($(this).hasClass("open")) {
+      $(".e-list").slideUp(function() {
+        $(".e-button").removeClass("open");
+      });
+    } else {
+      $(this).addClass("open");
+      setTimeout(function() {
+        $(".e-list").stop().slideDown();
+      }, 200);
+    }
+  });
+    </script>
+
+
+</body>
+</html>
